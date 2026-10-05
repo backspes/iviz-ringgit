@@ -7,7 +7,7 @@ Tema Visual Unik: Premium Midnight Navy & Metallic Gold Accent
 
 NAV_LINKS = [
     ("index.html", "Utama"),
-    ("kad-kredit-petrol.html", "⛽ Kad Kredit"),
+    ("kad-kredit.html", "💳 Kad Kredit"),
     ("pinjaman-peribadi.html", "💰 Pinjaman Peribadi"),
     ("skor-kredit.html", "📊 Skor Kredit"),
     ("tentang-kami.html", "Mengenai"),
@@ -16,7 +16,7 @@ NAV_LINKS = [
 
 MOBILE_NAV_LINKS = [
     ("index.html", "🏠 Laman Utama"),
-    ("kad-kredit-petrol.html", "💳 Semak Kad Kredit"),
+    ("kad-kredit.html", "💳 Semak Kad Kredit"),
     ("pinjaman-peribadi.html", "💰 Pinjaman Peribadi"),
     ("skor-kredit.html", "📊 Semak Skor Kredit (Experian)"),
 ]
@@ -94,7 +94,7 @@ GLOBAL_FOOTER = '''    <!-- GLOBAL FOOTER (komponen dikongsi — iviz Cards Midn
             </div>
             <div class="flex flex-col md:items-end gap-3">
                 <div class="flex flex-wrap items-center gap-4 text-slate-300 font-semibold">
-                    <a href="kad-kredit-petrol.html" class="hover:text-amber-400">Kad Kredit</a>
+                    <a href="kad-kredit.html" class="hover:text-amber-400">Kad Kredit</a>
                     <a href="pinjaman-peribadi.html" class="hover:text-amber-400">Pinjaman Peribadi</a>
                     <a href="skor-kredit.html" class="hover:text-amber-400">Skor Kredit</a>
                 </div>

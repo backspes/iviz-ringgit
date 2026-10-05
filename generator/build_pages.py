@@ -514,6 +514,122 @@ def build_card_page(card):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+#  HALAMAN MASTER KAD KREDIT (MASTER HUB / SILO HEAD)
+# ══════════════════════════════════════════════════════════════════════════════
+def build_master_cards_page():
+    nc = len(cards)
+    title = f"{nc} Kad Kredit Terbaik Malaysia ({_now.year}) — Bandingkan Rebat & Kelayakan | iviz Ringgit"
+    desc = f"Senarai {nc} kad kredit terbaik di Malaysia ({_now.year}). Bandingkan petrol, shopping, cashback harian, patuh syariah, travel dan kelayakan gaji minimum. Panduan permohonan rasmi bank."
+
+    cards_html = "".join(card_grid_item(c) for c in cards)
+    table_html = comparison_table(cards)
+
+    # Category pills
+    cat_pills = "".join(
+        f'''<a href="{CATEGORY_META[k]['slug']}" class="inline-flex items-center gap-2 bg-white hover:bg-amber-50 border border-slate-200 hover:border-amber-400 text-slate-800 hover:text-amber-800 font-bold text-xs px-4 py-2.5 rounded-xl transition-all shadow-sm">
+            <span>{CATEGORY_META[k]['emoji']}</span>
+            <span>{CATEGORY_META[k]['short']} ({len(groups.get(k, []))})</span>
+        </a>'''
+        for k in CATEGORY_ORDER if k in groups
+    )
+
+    cat_cards_summary = "".join(
+        f'''<div class="card-hover bg-white rounded-2xl border border-slate-200 p-5 flex flex-col justify-between">
+            <div>
+                <div class="text-3xl mb-2">{CATEGORY_META[k]['emoji']}</div>
+                <h3 class="font-extrabold text-slate-900 text-base mb-1.5"><a href="{CATEGORY_META[k]['slug']}" class="hover:text-amber-600">{CATEGORY_META[k]['title']}</a></h3>
+                <p class="text-xs text-slate-500 leading-relaxed">{CATEGORY_META[k]['desc']}</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-400">{len(groups.get(k, []))} kad</span>
+                <a href="{CATEGORY_META[k]['slug']}" class="text-xs font-extrabold text-amber-600 hover:text-amber-700">Terokai Kategori →</a>
+            </div>
+        </div>'''
+        for k in CATEGORY_ORDER if k in groups
+    )
+
+    master_faq = [
+        ("Bagaimana cara memilih kad kredit yang paling sesuai di Malaysia?",
+         "Kenal pasti corak perbelanjaan bulanan terbesar anda. Jika anda banyak berbelanja petrol kenderaan, pilih kad petrol khas. Sekiranya anda kerap membeli-belah di Shopee/Lazada atau menambah nilai e-Wallet, pilih kad shopping. Untuk kegunaan harian menyeluruh, pilih kad cashback all-rounder atau patuh Syariah."),
+        ("Berapakah syarat gaji minimum untuk memohon kad kredit?",
+         "Menurut garis panduan Bank Negara Malaysia (BNM), pendapatan tahunan minimum ialah RM24,000 (iaitu RM2,000 sebulan). Terdapat pelbagai kad yang mesra pekerja gaji permulaan dan graduan baharu dalam senarai kami."),
+        ("Apakah perbezaan antara kad kredit konvensional dan patuh Syariah?",
+         "Kad kredit patuh Syariah beroperasi berasaskan akad Islamik seperti Tawarruq dan bebas daripada sebarang caj riba atau faedah kompaun. Ia juga tidak boleh digunakan di premis tidak patuh Syariah seperti perjudian dan minuman keras."),
+        ("Adakah permohonan melalui iviz Ringgit dikenakan sebarang caj?",
+         "Tidak sama sekali. Semua perkhidmatan perbandingan di iviz Ringgit adalah 100% percuma. Anda akan diarahkan terus ke portal rasmi institusi perbankan untuk memohon."),
+        ("Berapa lama masa yang diambil untuk proses kelulusan pihak bank?",
+         "Kebanyakan bank mengambil masa antara 1 hingga 5 hari bekerja selepas dokumen permohonan lengkap diterima. Kad fizikal biasanya dihantar melalui kurier dalam tempoh 7 hingga 14 hari bekerja.")
+    ]
+
+    faq_html = "".join(
+        f'''<details class="group border border-slate-200 rounded-xl overflow-hidden bg-white">
+            <summary class="cursor-pointer list-none p-4 font-bold text-slate-800 flex justify-between items-center hover:bg-slate-50">
+                {q}
+                <span class="text-amber-500 text-xl group-open:rotate-45 transition-transform shrink-0 ml-3">+</span>
+            </summary>
+            <div class="px-4 pb-4 text-slate-600 leading-relaxed text-sm">{a}</div>
+        </details>''' for q, a in master_faq
+    )
+
+    faq_schema = {"@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in master_faq]}
+    item_list = {"@type": "ItemList", "name": f"{nc} Kad Kredit Terbaik Malaysia ({_now.year})",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": c["name"],
+             "url": f"{SITE_DOMAIN}/{slugify(c['name'])}.html"}
+            for i, c in enumerate(cards)]}
+    breadcrumb = {"@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Utama", "item": f"{SITE_DOMAIN}/"},
+        {"@type": "ListItem", "position": 2, "name": "Kad Kredit", "item": f"{SITE_DOMAIN}/kad-kredit.html"}]}
+
+    return f'''<!DOCTYPE html>
+<html lang="ms">
+<head>
+{head(title, desc, f"{SITE_DOMAIN}/kad-kredit.html", [breadcrumb, item_list, faq_schema], "kad kredit terbaik malaysia 2026, bandingkan kad kredit, kad kredit petrol, kad kredit cashback, kad kredit patuh syariah")}
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+{GLOBAL_HEADER}
+{promo_banner_html(is_detail=False, sub="master_cards")}
+
+    <main class="flex-1">
+        <section class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white border-b border-slate-800 py-12 md:py-16">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <span class="inline-block bg-slate-800/80 border border-amber-400/30 text-amber-400 text-xs font-bold px-4 py-1.5 rounded-full mb-5">📅 Dikemas kini {MONTH_YEAR} · {nc} kad kredit disenaraikan</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">💳 {nc} Kad Kredit Terbaik Malaysia ({_now.year})</h1>
+                <p class="text-slate-300 text-base md:text-lg mt-4 max-w-3xl mx-auto leading-relaxed">Bandingkan kelayakan gaji minimum, rebat pulangan tunai, had manfaat, dan ganjaran eksklusif setiap kad kredit bank rasmi di Malaysia. Pilih kad mengikut corak perbelanjaan anda.</p>
+                <div class="flex flex-wrap items-center justify-center gap-2 mt-6 max-w-4xl mx-auto">
+                    {cat_pills}
+                </div>
+            </div>
+        </section>
+
+        <div class="max-w-6xl mx-auto px-4 py-10">
+            <div class="mb-12">
+                <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-2">Terokai Mengikut Kategori Khas</h2>
+                <p class="text-slate-500 text-sm mb-6">Pilih kategori yang tepat untuk melihat perbandingan terperinci dan had ganjaran bulanan.</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">{cat_cards_summary}</div>
+            </div>
+
+            <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-1">Senarai Penuh {nc} Kad Kredit Terbaik ({_now.year})</h2>
+            <p class="text-slate-500 text-sm mb-6">Pilih kad untuk panduan ulasan lengkap atau klik 'Mohon Terus' ke laman rasmi perbankan.</p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">{cards_html}</div>
+
+            <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-1">Jadual Perbandingan Keseluruhan</h2>
+            <p class="text-slate-500 text-sm mb-6">Bandingkan semua {nc} kad kredit merentasi pelbagai bank dalam satu jadual ringkas.</p>
+            <div class="mb-14">{table_html}</div>
+
+            <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-4">Soalan Lazim Memohon Kad Kredit</h2>
+            <div class="space-y-3">{faq_html}</div>
+        </div>
+    </main>
+
+{GLOBAL_FOOTER}
+{GLOBAL_NAV_SCRIPT}
+</body>
+</html>'''
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 #  HALAMAN KATEGORI KAD (HUB)
 # ══════════════════════════════════════════════════════════════════════════════
 def build_category_page(cat_key):
@@ -1212,7 +1328,7 @@ def build_index():
                 <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">Keputusan Kewangan Bijak Untuk Masa Depan Anda</h1>
                 <p class="text-slate-300 text-base md:text-lg mt-5 max-w-2xl mx-auto leading-relaxed">Bandingkan kad kredit terbaik mengikut kegunaan sebenar, pinjaman peribadi dengan kelulusan pantas, serta semakan skor kredit rasmi. Telus, tepat dan tanpa caj tersembunyi.</p>
                 <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
-                    <a href="kad-kredit-petrol.html" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-extrabold px-6 py-3 rounded-xl shadow-lg shadow-amber-500/20 transition-all">💳 Bandingkan Kad Kredit</a>
+                    <a href="kad-kredit.html" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-extrabold px-6 py-3 rounded-xl shadow-lg shadow-amber-500/20 transition-all">💳 Bandingkan Kad Kredit</a>
                     <a href="pinjaman-peribadi.html" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold px-6 py-3 rounded-xl transition-colors">💰 Pinjaman Peribadi</a>
                     <a href="skor-kredit.html" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold px-6 py-3 rounded-xl transition-colors">📊 Semak Skor Kredit</a>
                 </div>
@@ -1220,7 +1336,10 @@ def build_index():
         </section>
 
         <section class="max-w-6xl mx-auto px-4 py-12">
-            <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-1">Pilih Kad Kredit Mengikut Kategori</h2>
+            <div class="flex flex-wrap items-end justify-between gap-3 mb-1">
+                <h2 class="text-xl md:text-2xl font-extrabold text-slate-900">Pilih Kad Kredit Mengikut Kategori</h2>
+                <a href="kad-kredit.html" class="text-sm font-extrabold text-amber-600 hover:text-amber-700">Lihat semua {len(cards)} kad →</a>
+            </div>
             <p class="text-slate-500 text-sm mb-6">Setiap kategori ada halaman perbandingan penuh, jadual dan soalan lazim sendiri.</p>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">{cat_tiles}</div>
         </section>
@@ -1367,6 +1486,10 @@ for card in cards:
 print(f"Generated {len(cards)} card pages")
 
 # 2. Halaman kategori kad (hub)
+with open(os.path.join(DIST_DIR, "kad-kredit.html"), "w", encoding="utf-8") as f:
+    f.write(build_master_cards_page())
+print("Generated kad-kredit.html (Master Hub)")
+
 cat_slugs = []
 for cat_key in CATEGORY_ORDER:
     if cat_key not in groups:
@@ -1419,7 +1542,7 @@ open(os.path.join(DIST_DIR, "_redirects"), "w", encoding="utf-8").write("\n".joi
 print("Generated _redirects")
 
 # 8. sitemap
-urls = [f"{SITE_DOMAIN}/"] + \
+urls = [f"{SITE_DOMAIN}/", f"{SITE_DOMAIN}/kad-kredit.html"] + \
        [f"{SITE_DOMAIN}/{s}" for s in cat_slugs] + \
        [f"{SITE_DOMAIN}/{s}" for s in loan_cat_slugs] + \
        [f"{SITE_DOMAIN}/pinjaman-peribadi.html", f"{SITE_DOMAIN}/skor-kredit.html"] + \
@@ -1444,6 +1567,7 @@ print("Generated robots.txt")
 llms = f"# {SITE_NAME} — Portal Perbandingan Kewangan (Rujukan AI)\n\n"
 llms += f"Portal perbandingan kewangan bebas Malaysia: {len(cards)} kad kredit, {len(loans)} pinjaman peribadi kelulusan pantas, dan semakan skor kredit CCRIS/Experian. Dikemas kini {MONTH_YEAR}.\n\n"
 llms += "## Hab Produk Kewangan & Pinjaman\n"
+llms += f"- Semua Kad Kredit ({len(cards)} kad — Master Hub): {SITE_DOMAIN}/kad-kredit.html\n"
 llms += f"- Pinjaman Peribadi (Utama): {SITE_DOMAIN}/pinjaman-peribadi.html\n"
 for lk in LOAN_CATEGORY_ORDER:
     if lk in loan_groups:
