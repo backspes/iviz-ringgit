@@ -1,0 +1,558 @@
+{
+  "project": "iviz-credit-cards",
+  "target_market": "Malaysia (ms-MY / en-MY)",
+  "updated_at": "2026-10-05",
+  "strategies": {
+    "SEO": "Search Engine Optimization (Google & Bing High-Intent Ranking)",
+    "AEO": "Answer Engine Optimization (Perplexity, ChatGPT, Claude, Gemini Direct Citations)",
+    "GEO": "Generative Engine Optimization & Local Signals (Bank Negara, AKPK, Ringgit, Touch 'n Go)"
+  },
+  "keyword_clusters": [
+    {
+      "cluster_id": "petrol",
+      "cluster_name": "⛽ Kad Kredit Minyak Petrol (Petronas, Shell, Caltex, BHP)",
+      "primary_keywords": [
+        "kad kredit petrol terbaik malaysia 2026",
+        "kad kredit jimat minyak petrol",
+        "kad kredit cashback shell petronas",
+        "best petrol credit card malaysia"
+      ],
+      "secondary_keywords": [
+        "kad kredit rhb shell 12 cashback",
+        "kad kredit cimb petronas visa platinum-i",
+        "maybank islamic ikhwan petrol cashback jumaat sabtu",
+        "kad kredit uob one petrol setel cardterus",
+        "cara jimat duit minyak kereta guna kad kredit"
+      ],
+      "aeo_questions": [
+        "Apakah kad kredit paling jimat minyak di Malaysia tahun 2026?",
+        "Berapa peratus pulangan tunai kad RHB Shell Visa?",
+        "Adakah kad kredit CIMB Petronas patuh Syariah?",
+        "Bolehkah guna kad kredit UOB ONE untuk Setel Petronas?"
+      ],
+      "target_cards": [
+        "rhb-shell-visa",
+        "cimb-petronas-visa-platinum-i",
+        "uob-one-card-platinum",
+        "maybank-islamic-ikhwan-mastercard-platinum"
+      ]
+    },
+    {
+      "cluster_id": "shopping_online",
+      "cluster_name": "🛍️ Kad Kredit Shopee, Lazada & Belanja Online",
+      "primary_keywords": [
+        "kad kredit shopee terbaik 2026",
+        "kad kredit cashback belanja online malaysia",
+        "kad kredit e-wallet touch n go grabpay",
+        "best online shopping credit card malaysia"
+      ],
+      "secondary_keywords": [
+        "maybank shopee visa platinum 5x coins",
+        "affin duo cashback ewallet online 3 peratus",
+        "uob evol online cashback 10 peratus",
+        "public bank quantum mastercard 5 peratus online",
+        "kad kredit mata ganjaran tak luput alliance timeless"
+      ],
+      "aeo_questions": [
+        "Kad kredit apa paling bagus untuk beli barang di Shopee?",
+        "Bagaimana cara dapat 5x Shopee Coins guna Maybank Shopee Card?",
+        "Adakah Affin Duo bagi pulangan tunai untuk tambah nilai TNG eWallet?",
+        "Berapa had bulanan cashback Public Bank Quantum Mastercard?"
+      ],
+      "target_cards": [
+        "maybank-shopee-visa-platinum",
+        "affin-duo-visa-cash-back",
+        "uob-evol-card",
+        "alliance-bank-visa-signature",
+        "public-bank-quantum-mastercard"
+      ]
+    },
+    {
+      "cluster_id": "all_rounder_cashback",
+      "cluster_name": "💳 Kad Kredit All-Rounder & Pulangan Tunai Harian",
+      "primary_keywords": [
+        "kad kredit cashback terbaik malaysia tanpa yuran tahunan",
+        "kad kredit all rounder terbaik 2026",
+        "maybank 2 gold cards review 2026",
+        "kad kredit free for life malaysia"
+      ],
+      "secondary_keywords": [
+        "maybank 2 gold amex 5 cashback sabtu ahad",
+        "kad kredit pulangan tunai makan dan barang dapur",
+        "kad kredit tiada yuran tahunan seumur hidup",
+        "perbezaan maybank 2 gold dan platinum cards"
+      ],
+      "aeo_questions": [
+        "Kenapa Maybank 2 Gold Cards dianggap kad all-rounder terbaik di Malaysia?",
+        "Hari apa dapat 5% cashback untuk kad Maybank American Express?",
+        "Berapa had maksimum pulangan tunai Maybank 2 Gold sebulan?"
+      ],
+      "target_cards": [
+        "maybank-2-gold-cards",
+        "uob-one-card-platinum"
+      ]
+    },
+    {
+      "cluster_id": "entry_level_income",
+      "cluster_name": "🎓 Kad Kredit Gaji Permulaan (RM2,000 – RM2,500/bulan)",
+      "primary_keywords": [
+        "kad kredit gaji rm2000 sebulan",
+        "kad kredit kelayakan gaji rendah malaysia",
+        "first credit card fresh graduate malaysia 2026",
+        "kad kredit mudah lulus gaji bersih rm2000"
+      ],
+      "secondary_keywords": [
+        "syarat mohon kad kredit pertama kali",
+        "kad kredit gaji rm24000 setahun",
+        "dokumen mohon kad kredit payslip kwsp",
+        "kad kredit graduan baru bekerja"
+      ],
+      "aeo_questions": [
+        "Apakah kad kredit yang boleh dipohon dengan gaji RM2,000 sebulan?",
+        "Bolehkah fresh graduate mohon kad kredit Maybank Shopee atau Affin Duo?",
+        "Apakah dokumen yang diperlukan untuk mohon kad kredit pertama kali?"
+      ],
+      "target_cards": [
+        "maybank-shopee-visa-platinum",
+        "affin-duo-visa-cash-back",
+        "cimb-petronas-visa-platinum-i",
+        "rhb-shell-visa",
+        "maybank-islamic-ikhwan-mastercard-platinum"
+      ]
+    },
+    {
+      "cluster_id": "islamic_shariah",
+      "cluster_name": "🕌 Kad Kredit Islamik & Patuh Syariah (Bebas Riba)",
+      "primary_keywords": [
+        "kad kredit islamik terbaik malaysia 2026",
+        "kad kredit patuh syariah bebas riba",
+        "credit card islamic malaysia tawarruq",
+        "maybank islamic ikhwan credit card review"
+      ],
+      "secondary_keywords": [
+        "perbezaan kad kredit konvensional dan islamik",
+        "caj lewat kad kredit islamik ganti rugi ta'widh",
+        "kad kredit ada sumbangan waqaf zakat",
+        "cimb islamic petronas platinum-i"
+      ],
+      "aeo_questions": [
+        "Bagaimana kad kredit Islamik berfungsi tanpa riba di Malaysia?",
+        "Apakah kelebihan Maybank Islamic Ikhwan berbanding kad konvensional?",
+        "Adakah kad kredit patuh Syariah mengenakan faedah berganda jika lewat bayar?"
+      ],
+      "target_cards": [
+        "maybank-islamic-ikhwan-mastercard-platinum",
+        "cimb-petronas-visa-platinum-i"
+      ]
+    },
+    {
+      "cluster_id": "ringgitplus_promos",
+      "cluster_name": "🎁 Promosi & Hadiah Percuma Permohonan Kad Kredit",
+      "primary_keywords": [
+        "ringgitplus kad kredit percuma hadiah 2026",
+        "mohon kad kredit dapat touch n go rm1000",
+        "ringgitplus free gift ipad iphone tng",
+        "promosi kad kredit uob alliance rhb ringgitplus"
+      ],
+      "secondary_keywords": [
+        "cara claim hadiah ringgitplus",
+        "ringgitplus flash deal promo code",
+        "syarat dapat hadiah percuma mohon kad kredit online"
+      ],
+      "aeo_questions": [
+        "Bagaimana cara memohon kad kredit melalui RinggitPlus untuk dapat hadiah percuma?",
+        "Berapa lama masa untuk terima baucar Touch n Go dari RinggitPlus?",
+        "Adakah permohonan kad kredit di RinggitPlus selamat dan rasmi?"
+      ],
+      "target_cards": [
+        "uob-one-card-platinum",
+        "alliance-bank-visa-signature",
+        "rhb-shell-visa"
+      ]
+    }
+  ],
+  "geo_entities": {
+    "country": "Malaysia",
+    "region": "MY",
+    "currency": "MYR (RM)",
+    "regulatory_bodies": [
+      "Bank Negara Malaysia (BNM)",
+      "Agensi Kaunseling dan Pengurusan Kredit (AKPK)",
+      "Perbadanan Insurans Deposit Malaysia (PIDM)"
+    ],
+    "local_payment_methods": [
+      "Touch 'n Go eWallet",
+      "Setel CardTerus",
+      "GrabPay",
+      "FPX Online Banking",
+      "DuitNow QR",
+      "ShopeePay",
+      "Boost eWallet"
+    ],
+    "local_merchants": [
+      "Petronas",
+      "Shell",
+      "Caltex",
+      "BHPetrol",
+      "Shopee Malaysia",
+      "Lazada Malaysia",
+      "Lotus's",
+      "Jaya Grocer",
+      "AEON BiG",
+      "Mydin",
+      "Econsave"
+    ]
+  },
+  "ubersuggest_seeds": [
+    {
+      "keyword": "kad kredit",
+      "volume": 1900,
+      "cpc_myr": 5.27,
+      "paid_difficulty": 42,
+      "seo_difficulty": 17
+    },
+    {
+      "keyword": "ringgitplus",
+      "volume": 60500,
+      "cpc_myr": 64.99,
+      "paid_difficulty": 56,
+      "seo_difficulty": 66
+    },
+    {
+      "keyword": "ringgitplus credit card",
+      "volume": 5400,
+      "cpc_myr": 1.27,
+      "paid_difficulty": 67,
+      "seo_difficulty": 31
+    },
+    {
+      "keyword": "kad kredit maybank",
+      "volume": 2400,
+      "cpc_myr": 1.55,
+      "paid_difficulty": 54,
+      "seo_difficulty": 17
+    },
+    {
+      "keyword": "kad kredit bank rakyat",
+      "volume": 1600,
+      "cpc_myr": 2.94,
+      "paid_difficulty": 38,
+      "seo_difficulty": 14
+    },
+    {
+      "keyword": "kad kredit bsn",
+      "volume": 1600,
+      "cpc_myr": 3.72,
+      "paid_difficulty": 43,
+      "seo_difficulty": 15
+    },
+    {
+      "keyword": "kad kredit bank islam",
+      "volume": 880,
+      "cpc_myr": 1.43,
+      "paid_difficulty": 28,
+      "seo_difficulty": 14
+    },
+    {
+      "keyword": "ringgitplus loan",
+      "volume": 880,
+      "cpc_myr": 6.74,
+      "paid_difficulty": 68,
+      "seo_difficulty": 16
+    },
+    {
+      "keyword": "kad kredit cimb",
+      "volume": 480,
+      "cpc_myr": 1.51,
+      "paid_difficulty": 41,
+      "seo_difficulty": 16
+    },
+    {
+      "keyword": "kad kredit aeon",
+      "volume": 390,
+      "cpc_myr": 1.88,
+      "paid_difficulty": 47,
+      "seo_difficulty": 15
+    },
+    {
+      "keyword": "kad kredit ambank",
+      "volume": 260,
+      "cpc_myr": 1.8,
+      "paid_difficulty": 57,
+      "seo_difficulty": 14
+    },
+    {
+      "keyword": "ringgitplus malaysia",
+      "volume": 260,
+      "cpc_myr": 1.23,
+      "paid_difficulty": 65,
+      "seo_difficulty": 20
+    },
+    {
+      "keyword": "kad kredit affin bank",
+      "volume": 210,
+      "cpc_myr": 2.78,
+      "paid_difficulty": 48,
+      "seo_difficulty": 11
+    },
+    {
+      "keyword": "kad kredit rhb",
+      "volume": 210,
+      "cpc_myr": 1.47,
+      "paid_difficulty": 56,
+      "seo_difficulty": 20
+    },
+    {
+      "keyword": "kad kredit public bank",
+      "volume": 210,
+      "cpc_myr": 2.98,
+      "paid_difficulty": 52,
+      "seo_difficulty": 14
+    },
+    {
+      "keyword": "ringgitplus fixed deposit",
+      "volume": 210,
+      "cpc_myr": 4.33,
+      "paid_difficulty": 20,
+      "seo_difficulty": 16
+    },
+    {
+      "keyword": "ringgitplus customer service",
+      "volume": 210,
+      "cpc_myr": 3.19,
+      "paid_difficulty": 17,
+      "seo_difficulty": 19
+    },
+    {
+      "keyword": "ringgitplus review",
+      "volume": 170,
+      "cpc_myr": 17.03,
+      "paid_difficulty": 21,
+      "seo_difficulty": 24
+    },
+    {
+      "keyword": "ringgitplus scammer",
+      "volume": 170,
+      "cpc_myr": 10.42,
+      "paid_difficulty": 23,
+      "seo_difficulty": 25
+    },
+    {
+      "keyword": "kad kredit bank muamalat",
+      "volume": 140,
+      "cpc_myr": 5.47,
+      "paid_difficulty": 22,
+      "seo_difficulty": 19
+    },
+    {
+      "keyword": "kad kredit ikhwan maybank",
+      "volume": 70,
+      "cpc_myr": 0.59,
+      "paid_difficulty": 23,
+      "seo_difficulty": 12
+    },
+    {
+      "keyword": "ringgitplus car insurance",
+      "volume": 70,
+      "cpc_myr": 4.82,
+      "paid_difficulty": 46,
+      "seo_difficulty": 27
+    },
+    {
+      "keyword": "kad kredit mudah lulus",
+      "volume": 40,
+      "cpc_myr": 5.62,
+      "paid_difficulty": 69,
+      "seo_difficulty": 26
+    },
+    {
+      "keyword": "ringgitplus insurance",
+      "volume": 40,
+      "cpc_myr": 2.9,
+      "paid_difficulty": 65,
+      "seo_difficulty": 38
+    },
+    {
+      "keyword": "ringgitplus career",
+      "volume": 40,
+      "cpc_myr": 1.16,
+      "paid_difficulty": 12,
+      "seo_difficulty": 22
+    },
+    {
+      "keyword": "kad kredit rhb islamic",
+      "volume": 30,
+      "cpc_myr": 1.92,
+      "paid_difficulty": 62,
+      "seo_difficulty": 24
+    },
+    {
+      "keyword": "ringgitplus medical card",
+      "volume": 20,
+      "cpc_myr": 1.53,
+      "paid_difficulty": 45,
+      "seo_difficulty": 27
+    },
+    {
+      "keyword": "ringgitplus best fixed deposit",
+      "volume": 10,
+      "cpc_myr": 1.29,
+      "paid_difficulty": 36,
+      "seo_difficulty": 16
+    },
+    {
+      "keyword": "kad kredit atome",
+      "volume": 0,
+      "cpc_myr": 0.0,
+      "paid_difficulty": 1,
+      "seo_difficulty": 12
+    },
+    {
+      "keyword": "ringgitplus trusted or not",
+      "volume": 0,
+      "cpc_myr": 0.0,
+      "paid_difficulty": 1,
+      "seo_difficulty": 4
+    },
+    {
+      "keyword": "ringgitplus ok tak",
+      "volume": 0,
+      "cpc_myr": 0.0,
+      "paid_difficulty": 1,
+      "seo_difficulty": 12
+    },
+    {
+      "keyword": "ringgitplus balance transfer 0",
+      "volume": 0,
+      "cpc_myr": 0.0,
+      "paid_difficulty": 1,
+      "seo_difficulty": 4
+    }
+  ],
+  "content_silos": [
+    {
+      "silo_id": "ringgitplus_trust",
+      "title": "Kredibiliti & Review RinggitPlus (Bottom of Funnel / High Conversion)",
+      "why_golden": "Carian orang yang dah nak apply tapi ragu-ragu. CPC cecah RM17.03, SEO Difficulty sangat rendah (4-25).",
+      "keywords": [
+        {
+          "kw": "ringgitplus credit card",
+          "vol": 5400,
+          "sd": 31
+        },
+        {
+          "kw": "ringgitplus review",
+          "vol": 170,
+          "sd": 24,
+          "cpc": 17.03
+        },
+        {
+          "kw": "ringgitplus scammer",
+          "vol": 170,
+          "sd": 25,
+          "cpc": 10.42
+        },
+        {
+          "kw": "ringgitplus trusted or not",
+          "vol": 0,
+          "sd": 4
+        },
+        {
+          "kw": "ringgitplus ok tak",
+          "vol": 0,
+          "sd": 12
+        }
+      ],
+      "article_target": "ringgitplus-review-selamat-atau-scam.html",
+      "aeo_direct_answer": "RinggitPlus bukan scammer. Ia platform fintech sah di bawah pengawalseliaan Bank Negara Malaysia (Fintech Sandbox alumni) yang bekerjasama rasmi dengan bank-bank utama untuk tawaran hadiah percuma permohonan kad kredit."
+    },
+    {
+      "silo_id": "bank_specific",
+      "title": "Carian Jenama Bank (High Volume, Low Difficulty SD 11-17)",
+      "why_golden": "Semua bank utama ada SEO Difficulty bawah 20. Sangat mudah tembus ranking Google.",
+      "keywords": [
+        {
+          "kw": "kad kredit maybank",
+          "vol": 2400,
+          "sd": 17
+        },
+        {
+          "kw": "kad kredit cimb",
+          "vol": 480,
+          "sd": 16
+        },
+        {
+          "kw": "kad kredit affin bank",
+          "vol": 210,
+          "sd": 11
+        },
+        {
+          "kw": "kad kredit rhb",
+          "vol": 210,
+          "sd": 20
+        },
+        {
+          "kw": "kad kredit public bank",
+          "vol": 210,
+          "sd": 14
+        }
+      ]
+    },
+    {
+      "silo_id": "approval_intent",
+      "title": "Niat Kelulusan Mudah (High Commercial Intent)",
+      "why_golden": "Pengguna gaji sederhana yang nak kad segera lulus. CPC tinggi RM5.62.",
+      "keywords": [
+        {
+          "kw": "kad kredit mudah lulus",
+          "vol": 40,
+          "sd": 26,
+          "cpc": 5.62
+        },
+        {
+          "kw": "kad kredit gaji rm2000 sebulan",
+          "vol": 200,
+          "sd": 15
+        }
+      ],
+      "article_target": "kad-kredit-mudah-lulus.html"
+    },
+    {
+      "silo_id": "islamic_intent",
+      "title": "Kad Kredit Islamik & Patuh Syariah",
+      "why_golden": "Permintaan tinggi untuk produk bebas riba. Gabungan carian bank Islam melebihi 4,000 carian sebulan.",
+      "keywords": [
+        {
+          "kw": "kad kredit bank rakyat",
+          "vol": 1600,
+          "sd": 14
+        },
+        {
+          "kw": "kad kredit bsn",
+          "vol": 1600,
+          "sd": 15
+        },
+        {
+          "kw": "kad kredit bank islam",
+          "vol": 880,
+          "sd": 14
+        },
+        {
+          "kw": "kad kredit bank muamalat",
+          "vol": 140,
+          "sd": 19
+        },
+        {
+          "kw": "kad kredit ikhwan maybank",
+          "vol": 70,
+          "sd": 12
+        },
+        {
+          "kw": "kad kredit rhb islamic",
+          "vol": 30,
+          "sd": 24
+        }
+      ]
+    }
+  ]
+}
