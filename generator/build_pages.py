@@ -1359,7 +1359,7 @@ def build_index():
                 <h2 class="text-xl md:text-2xl font-extrabold text-slate-900">Pilih Kad Kredit Mengikut Kategori</h2>
                 <a href="kad-kredit.html" class="text-sm font-extrabold text-amber-600 hover:text-amber-700">Lihat semua {len(cards)} kad →</a>
             </div>
-            <p class="text-slate-500 text-sm mb-6">Setiap kategori ada halaman perbandingan penuh, jadual dan soalan lazim sendiri.</p>
+            <p class="text-slate-500 text-sm mb-6">Tak pasti nak pilih yang mana? Mulakan ikut cara anda guna kad setiap hari — isi minyak, beli-belah, melancong, atau patuh Syariah.</p>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">{cat_tiles}</div>
         </section>
 
