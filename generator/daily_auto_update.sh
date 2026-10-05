@@ -7,11 +7,15 @@ mkdir -p "$PROJECT_DIR/logs"
 
 echo "=== [$(date '+%Y-%m-%d %H:%M:%S')] Starting Daily Cards Sync ===" >> "$LOG_FILE"
 
-# 1. Build Static Pages
+# 1. Check Product & Promotion Lifecycle (Auto-Expire Promotions)
+echo "--- Checking Lifecycle & Expired Campaigns ---" >> "$LOG_FILE"
+python3 "$PROJECT_DIR/generator/sync_lifecycle.py" >> "$LOG_FILE" 2>&1
+
+# 2. Build Static Pages
 echo "--- Building Pages ---" >> "$LOG_FILE"
 python3 "$PROJECT_DIR/generator/build_pages.py" >> "$LOG_FILE" 2>&1
 
-# 2. Deploy to Cloudflare Pages
+# 3. Deploy to Cloudflare Pages
 echo "--- Deploying to Cloudflare Pages ---" >> "$LOG_FILE"
 # Source environment variables if .env exists
 if [ -f "$PROJECT_DIR/.env" ]; then
@@ -24,7 +28,7 @@ export CLOUDFLARE_API_TOKEN="${CLOUDFLARE_API_TOKEN:?set this in your environmen
 export CLOUDFLARE_ACCOUNT_ID="${CLOUDFLARE_ACCOUNT_ID:?set this in your environment or .env}"
 /root/node_modules/.bin/wrangler pages deploy "$PROJECT_DIR/dist" --project-name=ringgit-iviztrading --branch=main --commit-dirty=true >> "$LOG_FILE" 2>&1
 
-# 3. Purge Cloudflare Cache
+# 4. Purge Cloudflare Cache
 echo "--- Purging Cache ---" >> "$LOG_FILE"
 curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID:?missing zone id}/purge_cache" \
   -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \

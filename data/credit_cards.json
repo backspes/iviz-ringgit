@@ -23,7 +23,7 @@
     ],
     "caveats": "Pulangan tunai hanya pada Jumaat & Sabtu sahaja. Perbelanjaan petrol & barangan dapur pada hari lain hanya dapat 1x TreatsPoints.",
     "ideal_for": "Pemandu kenderaan harian dan keluarga yang ingin jimat belanja minyak serta barangan dapur pada hujung minggu, dengan pilihan patuh Syariah.",
-    "apply_url": "https://invl.me/aff_m?offer_id=102934&aff_id=122839&source=ia_api_offer",
+    "apply_url": "https://invl.me/clo2cz1",
     "image_url": "https://ringgitplus.com/img-v5/card-120/maybank-islamic-ikhwan-mastercard-gold-card-i-54feb7d0fd1ef36571cfff76.jpg",
     "source_url": "https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/cards/credit/islamic_mastercard_ikhwan_platinum_card.page",
     "last_verified": "2026-10-05"
@@ -172,35 +172,6 @@
     "apply_url": "https://invl.me/clo2aox",
     "image_url": "https://ringgitplus.com/img-v5/card-120/alliance-bank-visa-signature-6170288db89bc7fe1ad4af76.jpg",
     "source_url": "https://www.alliancebank.com.my/personal/Cards/Credit-Cards",
-    "last_verified": "2026-10-05"
-  },
-  {
-    "id": "rhb-shell-visa",
-    "name": "RHB Shell Visa Credit Card",
-    "bank": "RHB",
-    "category": "petrol",
-    "category_label": "⛽ Sehingga 12% Pulangan Tunai di Shell",
-    "islamic": false,
-    "min_income_annual": 24000,
-    "min_income_monthly": 2000,
-    "annual_fee": "RM195 (Percuma tahun pertama, dikecualikan dengan 24 sapuan setahun)",
-    "cashback_headline": "Sehingga 12% Pulangan Tunai Petrol Shell",
-    "cashback_cap": "RM50 sebulan (petrol)",
-    "cashback_days": "Setiap Hari",
-    "best_for": "Pemandu setia stesen Shell",
-    "shopee_perks": "Sehingga 5% untuk e-Wallet & belanja online (pada tier perbelanjaan tertinggi)",
-    "petrol_perks": "12% pulangan tunai di Shell (belanja bulanan ≥ RM2,500); 8% (RM1,500–2,499); 5% (RM800–1,499)",
-    "features": [
-      "Kelayakan gaji serendah RM24,000 setahun (RM2,000 sebulan).",
-      "Pulangan tunai bertingkat: 12% (belanja RM2,500+), 8% (RM1,500–2,499), 5% (RM800–1,499) untuk petrol Shell.",
-      "5% pulangan tunai untuk barangan dapur, e-Wallet, belanja online dan utiliti pada tier tertinggi.",
-      "Kad ini khusus untuk stesen Shell sahaja bagi kadar petrol maksimum."
-    ],
-    "caveats": "Kadar 12% hanya di stesen SHELL sahaja. Had petrol RM50/bulan. Stesen minyak lain hanya 0.2%. Perlu belanja RM2,500+ sebulan untuk dapat kadar penuh.",
-    "ideal_for": "Pemandu yang kerap mengisi minyak di stesen Shell dan mahukan pulangan tunai petrol tertinggi.",
-    "apply_url": "https://invl.me/aff_m?offer_id=102934&aff_id=122839&source=ia_api_offer",
-    "image_url": "https://ringgitplus.com/img-v5/card-120/rhb-shell-visa-credit-card-i-63918728847cf2941726e77a.jpg",
-    "source_url": "https://www.rhbgroup.com/personal/cards/credit-cards/rhb-shell-visa-credit-card/index.html",
     "last_verified": "2026-10-05"
   },
   {

@@ -1,30 +1,91 @@
-# iviz Cards Malaysia (Portal Perbandingan Kad Kredit Nilai Tinggi)
+# iviz Ringgit — Malaysian Personal Finance & Credit Card Affiliate Portal (SSG)
 
-Portal perbandingan kad kredit pintar pertama di Malaysia yang berfokuskan **Nilai Guna Sebenar (Value-by-Use-Case)** — membolehkan pengguna memilih kad terbaik mengikut corak perbelanjaan sebenar mereka (Petrol, Shopee/Online, Dapur/Makan, Patuh Syariah, dan Gaji Permulaan).
+Portal perbandingan kewangan bebas Malaysia berasaskan Static Site Generator (Python SSG) berprestasi tinggi yang dihoskan di Cloudflare Pages.
 
----
-
-## 1. Integrasi Komersial (Monetisasi)
-- **Rangkaian Afiliasi**: Involve Asia
-- **Merchant**: RinggitPlus Malaysia
-- **Offer ID**: `102934` (Network Offer ID: `4088`)
-- **Model Komisen**: Cost Per Lead (CPL)
-  - Pendapatan RM3,000+: **RM14.00 per permohonan** (UOB, Alliance Bank, RHB)
-  - Pendapatan < RM3,000: **RM3.50 per permohonan**
-- **Landing Page Tracking**: `https://invl.me/aff_m?offer_id=102934&aff_id=122839&source=ia_api_offer`
+- **Domain Utama**: `https://ringgit.iviztrading.com`
+- **Senibina**: Hub-and-Spoke 3-Tier Enterprise Silo
+- **Pematuhan**: Standard Enterprise (Zero Hardcoded Secrets, Zero 404 Policy, AEO/GEO Optimized)
 
 ---
 
-## 2. Kategori Penggunaan (Use Cases)
-1. **⛽ Raja Petrol**: Kad kredit terbaik untuk rebat minyak di Petronas, Shell, Caltex & BHPetrol (Maybank Ikhwan, UOB ONE, Affin Duo, CIMB Petronas).
-2. **🛍️ Kaki Shopping Shopee & Online**: Pulangan tunai 5%–8% serta ganjaran syiling Shopee/e-Wallet (Maybank Shopee, UOB Simple, Alliance Signature, PB Quantum).
-3. **💳 All-Rounder Harian**: 5% pulangan tunai hujung minggu untuk makan dan beli-belah (Maybank 2 Gold Cards).
-4. **🕌 Kad Patuh Syariah (Islamik)**: 100% bebas riba, perlindungan caj lewat tanpa faedah berganda, dan sumbangan Waqaf automatik.
-5. **🎓 Gaji Permulaan (RM2,000/bln)**: Kad kredit dengan syarat kelayakan gaji minimum rendah khas untuk graduan baharu dan pekerja muda.
+## 1. Senibina Navigasi & Pipeline Halaman (Hub-and-Spoke)
+
+```
+[ Tier 1: Laman Utama / Homepage ]
+  ↳ index.html (Gambaran menyeluruh, trust signals, kad pilihan)
+       │
+       ├── [ Tier 2: Master Hubs ]
+       │     ├── kad-kredit.html (34 Kad Kredit — Master Category Hub)
+       │     ├── pinjaman-peribadi.html (10 Pinjaman Bank — Master Loans Hub)
+       │     └── skor-kredit.html (Semakan Skor Kredit Rasmi Experian/CCRIS)
+       │
+       ├── [ Tier 3: Sub-Category Listicle Hubs ]
+       │     ├── Kad: /kad-kredit-petrol.html, /kad-kredit-shopping.html, /kad-kredit-cashback.html,
+       │     │        /kad-kredit-islamic.html, /kad-kredit-travel.html, /kad-kredit-gaji-rendah.html
+       │     └── Pinjaman: /pinjaman-gaji-rendah.html, /pinjaman-islamic.html,
+       │                   /pinjaman-kelulusan-pantas.html, /pinjaman-penjawat-awam.html
+       │
+       └── [ Tier 4: Product Detail Pages (Spokes) ]
+             ├── 34 Ulasan Kad Kredit (/maybank-shopee-visa-platinum.html, /rhb-shell-visa-credit-card.html, ...)
+             └── 10 Ulasan Pinjaman (/alliance-cashfirst.html, /rhb-personal-financing.html, ...)
+```
 
 ---
 
-## 3. Standard Pematuhan Undang-Undang & Pengawalseliaan (Trust & E-E-A-T)
-- **Penafian Wajib Bank Negara Malaysia (BNM)**.
-- **Pautan Bantuan Agensi Kaunseling dan Pengurusan Kredit (AKPK)**.
-- **Perlindungan Simpanan PIDM**.
+## 2. Kitaran Hayat Produk & Promosi (Lifecycle Management & Zero 404 Policy)
+
+Mengikut amalan standard enterprise:
+1. **Zero 404 Policy**: Halaman produk yang telah luput atau dipausekan oleh pihak bank **TIDAK AKAN DIPADAM** bagi melindungi autoriti SEO dan backlink indeks.
+2. **Soft-Sync State Machine**:
+   - `active`: Dipaparkan butang mohon penuh berserta affiliate tracking link.
+   - `paused` / `discontinued`: Memaparkan amaran lembut *"⚠️ Status Tawaran: Ditutup Sementara"* dan butang CTA secara automatik mengarahkan pelawat ke hab kategori alternatif aktif.
+3. **Auto-Expire Campaigns**: `sync_lifecycle.py` memeriksa tarikh luput `valid_until` promosi sebelum proses binaan statik dijalankan.
+
+---
+
+## 3. Audit Penjejakan Afiliasi (Playwright Verified)
+
+Semua pautan afiliasi diuji secara berkala menggunakan Playwright headless automation:
+- **Penyedia Rakan Kongsi**: Involve Asia (RinggitPlus CPA & Experian).
+- **Kadar Kejayaan Audit**: 100% 200 OK (0 ralat 404, 0 fallback generik).
+
+---
+
+## 4. Keperluan Persekitaran & Arahan Penggunaan (.env)
+
+Fail konfigurasi rahsia diasingkan ke dalam `.env` (tidak di-commit ke Git):
+
+```bash
+# Salin fail templat
+cp .env.example .env
+
+# Isi kunci rasmi Cloudflare
+CLOUDFLARE_API_TOKEN="cfat_xxx"
+CLOUDFLARE_ACCOUNT_ID="e616c381d42b064aed77d093cacba0af"
+CLOUDFLARE_ZONE_ID="d9c296b599911752940ae9c9bc111179"
+```
+
+### Arahan Binaan Tempatan (Build):
+```bash
+python3 generator/build_pages.py
+```
+
+### Pelaksanaan Audit Playwright:
+```bash
+python3 generator/audit_playwright.py
+```
+
+### Penjadualan Cron Harian (Auto Update):
+```cron
+# Kemas kini tarikh, status kempen, bina semula dan deploy ke Cloudflare (Setiap 4:00 AM)
+0 4 * * * /root/projects/iviz-credit-cards/generator/daily_auto_update.sh
+```
+
+---
+
+## 5. Ringkasan Perubahan Terkini (CHANGELOG)
+
+* **feat(master-hub)**: Menambah Master Hub `/kad-kredit.html` dan mengemaskini laluan navigasi navbar & hero CTA.
+* **feat(lifecycle)**: Melaksanakan modul `sync_lifecycle.py` untuk menguruskan kitaran hayat promosi dan status produk *paused* tanpa 404.
+* **fix(deeplinks)**: Memperbetulkan 44 pautan penjejakan afiliasi RinggitPlus/Involve Asia dan mengesahkannya dengan Playwright.
+* **sec(enterprise)**: Menyingkirkan kredensial hardcoded daripada kod sumber kepada persekitaran `.env` berpusat dan membersihkan sejarah commit.

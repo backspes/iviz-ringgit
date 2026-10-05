@@ -392,6 +392,24 @@ def build_card_page(card):
 
     islamic_badge = '<span class="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold px-2.5 py-1 rounded-full">🕌 Patuh Syariah</span>' if card["islamic"] else ''
 
+    # ── Lifecycle status (Zero 404 Policy) ──
+    status = card.get("status", "active")
+    is_paused = status != "active"
+    if is_paused:
+        paused_notice = '''<div class="bg-amber-50 border border-amber-300 rounded-xl p-4 mb-5 flex items-start gap-3">
+                    <span class="text-2xl shrink-0">⚠️</span>
+                    <div>
+                        <div class="font-extrabold text-amber-900">Tawaran Ditutup Sementara</div>
+                        <p class="text-sm text-amber-800 leading-relaxed">Pihak bank sedang mengemas kini tawaran kad ini. Halaman ini dikekalkan untuk rujukan anda — sila semak pilihan alternatif terbaik dalam kategori yang sama di bawah.</p>
+                    </div>
+                </div>'''
+        apply_href = cm['slug']
+        apply_label = "Lihat Alternatif Terbaik →"
+    else:
+        paused_notice = ""
+        apply_href = track_apply_url(card['apply_url'], slug)
+        apply_label = "Mohon Kad Ini Secara Rasmi →"
+
     return f'''<!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -413,6 +431,7 @@ def build_card_page(card):
 
         <section class="max-w-6xl mx-auto px-4 pt-4 pb-4">
             {promo_banner_html(is_detail=True, sub=slug)}
+            {paused_notice}
             <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8">
                 <div class="flex flex-col md:flex-row md:items-center gap-6">
                     <div class="shrink-0">
@@ -450,9 +469,9 @@ def build_card_page(card):
                     </div>
                 </div>
 
-                <a href="{track_apply_url(card['apply_url'], slug)}" target="_blank" rel="noopener noreferrer sponsored"
+                <a href="{apply_href}" target="_blank" rel="noopener noreferrer sponsored"
                    class="mt-6 block w-full md:w-auto md:inline-block text-center bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-extrabold px-8 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition-all">
-                    Mohon Kad Ini Secara Rasmi →
+                    {apply_label}
                 </a>
             </div>
         </section>
@@ -500,9 +519,9 @@ def build_card_page(card):
                 <div class="text-xs font-extrabold text-white truncate">{card['name']}</div>
                 <div class="text-[11px] text-amber-400 font-semibold truncate">{card['cashback_headline']}</div>
             </div>
-            <a href="{track_apply_url(card['apply_url'], slug)}" target="_blank" rel="noopener noreferrer sponsored"
+            <a href="{apply_href}" target="_blank" rel="noopener noreferrer sponsored"
                class="shrink-0 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-md transition-all">
-                Mohon Rasmi →
+                {"Mohon Rasmi →" if not is_paused else "Lihat Alternatif →"}
             </a>
         </div>
     </main>
