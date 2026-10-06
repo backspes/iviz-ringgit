@@ -1604,4 +1604,59 @@ for c in cards:
 open(os.path.join(DIST_DIR, "llms.txt"), "w", encoding="utf-8").write(llms)
 print("Generated llms.txt")
 
+# Stealth & Minify post-processing
+def optimize_and_stealth_dist(dist_dir):
+    """
+    STEALTH POST-PROCESSOR:
+    1. Compiles Tailwind CSS to a single static `styles.css` file via Tailwind CLI (no CDN script).
+    2. Replaces Tailwind CDN script & config with <link rel="stylesheet" href="styles.css">.
+    3. Strips all HTML comments.
+    4. Minifies HTML.
+    """
+    import subprocess, re, htmlmin, os
+
+    tw_bin = "/root/tools/tw-ringgit/node_modules/.bin/tailwindcss"
+    tw_config = "/root/tools/tw-ringgit/tailwind.config.js"
+    tw_input = "/root/tools/tw-ringgit/input.css"
+    tw_output = os.path.join(dist_dir, "styles.css")
+
+    try:
+        subprocess.run([tw_bin, "-c", tw_config, "-i", tw_input, "-o", tw_output, "--minify"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    except Exception as e:
+        print(f"  ⚠️ Warning: Tailwind CLI compile failed ({e}).")
+
+    comment_regex = re.compile(r'<!--(?!\[if).*?-->', re.DOTALL)
+    tw_script_regex = re.compile(r'<script\s+src=["\']https://cdn\.tailwindcss\.com["\']><\s*/script\s*>', re.IGNORECASE)
+    tw_config_regex = re.compile(r'<script>\s*tailwind\.config[\s\S]*?</script>', re.IGNORECASE)
+    inline_style_regex = re.compile(r'<style>[\s\S]*?</style>', re.IGNORECASE)
+
+    count = 0
+    for fname in os.listdir(dist_dir):
+        if not fname.endswith(".html"):
+            continue
+
+        fpath = os.path.join(dist_dir, fname)
+        html = open(fpath, encoding="utf-8").read()
+
+        # Replace CDN & Tailwind config script with styles.css link
+        html = tw_script_regex.sub('<link rel="stylesheet" href="styles.css">', html)
+        html = tw_config_regex.sub('', html)
+        html = inline_style_regex.sub('', html)
+
+        # Strip HTML comments
+        html = comment_regex.sub('', html)
+
+        # Minify HTML
+        try:
+            html = htmlmin.minify(html, remove_comments=True, remove_empty_space=True)
+        except Exception:
+            pass
+
+        open(fpath, "w", encoding="utf-8").write(html)
+        count += 1
+
+    print(f" Stealth & Minify complete: Compiled static styles.css & cleaned {count} HTML pages.")
+
+optimize_and_stealth_dist(DIST_DIR)
+
 print(f"\nDONE — {len(urls)} URLs total ({len(cards)} kad + {len(loans)} pinjaman + {len(cat_slugs)} kategori kad + {len(loan_cat_slugs)} kategori pinjaman + 4 trust + 1 utama)")
