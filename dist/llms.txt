@@ -1,21 +1,21 @@
 # iviz Ringgit Malaysia — Portal Perbandingan Kewangan (Rujukan AI)
 
-Portal perbandingan kewangan bebas Malaysia: 35 kad kredit, 10 pinjaman peribadi kelulusan pantas, dan semakan skor kredit CCRIS/Experian. Dikemas kini Oktober 2026.
+Portal perbandingan kewangan bebas Malaysia: 34 kad kredit, 10 pinjaman peribadi kelulusan pantas, dan semakan skor kredit CCRIS/Experian. Dikemas kini Oktober 2026.
 
 ## Hab Produk Kewangan & Pinjaman
-- Semua Kad Kredit (35 kad — Master Hub): https://ringgit.iviztrading.com/kad-kredit.html
+- Semua Kad Kredit (34 kad — Master Hub): https://ringgit.iviztrading.com/kad-kredit.html
 - Pinjaman Peribadi (Utama): https://ringgit.iviztrading.com/pinjaman-peribadi.html
 - Pinjaman Peribadi Gaji Rendah (6 pinjaman): https://ringgit.iviztrading.com/pinjaman-gaji-rendah.html
 - Pinjaman Peribadi Patuh Syariah (4 pinjaman): https://ringgit.iviztrading.com/pinjaman-islamic.html
 - Pinjaman Kelulusan Pantas (6 pinjaman): https://ringgit.iviztrading.com/pinjaman-kelulusan-pantas.html
 - Pinjaman untuk Penjawat Awam & GLC (2 pinjaman): https://ringgit.iviztrading.com/pinjaman-penjawat-awam.html
 - Semakan Skor Kredit: https://ringgit.iviztrading.com/skor-kredit.html
-- Kad Kredit Petrol Terbaik (8 kad): https://ringgit.iviztrading.com/kad-kredit-petrol.html
+- Kad Kredit Petrol Terbaik (7 kad): https://ringgit.iviztrading.com/kad-kredit-petrol.html
 - Kad Kredit Shopping & e-Wallet (8 kad): https://ringgit.iviztrading.com/kad-kredit-shopping.html
 - Kad Kredit Cashback All-Rounder (4 kad): https://ringgit.iviztrading.com/kad-kredit-cashback.html
 - Kad Kredit Patuh Syariah (4 kad): https://ringgit.iviztrading.com/kad-kredit-islamic.html
 - Kad Kredit Travel & Air Miles (5 kad): https://ringgit.iviztrading.com/kad-kredit-travel.html
-- Kad Kredit Gaji Permulaan (RM2,000/bulan) (24 kad): https://ringgit.iviztrading.com/kad-kredit-gaji-rendah.html
+- Kad Kredit Gaji Permulaan (RM2,000/bulan) (23 kad): https://ringgit.iviztrading.com/kad-kredit-gaji-rendah.html
 
 ## Senarai Kad Kredit
 ### Maybank Islamic Mastercard Ikhwan Platinum (Maybank Islamic)
@@ -65,14 +65,6 @@ Portal perbandingan kewangan bebas Malaysia: 35 kad kredit, 10 pinjaman peribadi
 - Yuran: RM148 (Dikecualikan pada tahun pertama)
 - Had: Terhad kepada RM3,000 perbelanjaan e-Wallet per kitaran penyata
 - Halaman: https://ringgit.iviztrading.com/alliance-bank-visa-signature.html
-
-### RHB Shell Visa Credit Card (RHB)
-- Kategori: Kad Kredit Petrol Terbaik
-- Ganjaran: Sehingga 12% Pulangan Tunai Petrol Shell
-- Gaji minimum: RM2,000/bulan
-- Yuran: RM195 (Percuma tahun pertama, dikecualikan dengan 24 sapuan setahun)
-- Had: RM50 sebulan (petrol)
-- Halaman: https://ringgit.iviztrading.com/rhb-shell-visa-credit-card.html
 
 ### Maybank 2 Gold Cards (Amex + Mastercard/Visa) (Maybank)
 - Kategori: Kad Kredit Cashback All-Rounder

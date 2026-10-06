@@ -1,0 +1,34 @@
+=== [2026-10-05 23:56:45] Starting Daily Cards Sync ===
+--- Checking Lifecycle & Expired Campaigns ---
+[LIFECYCLE] All promotions are current and valid.
+--- Building Pages ---
+Generated 34 card pages
+Generated kad-kredit.html (Master Hub)
+Generated 6 category pages
+Generated pinjaman-peribadi.html
+Generated 4 loan category pages
+Generated 10 loan detail pages
+Generated skor-kredit.html
+Generated index.html
+Generated 4 trust pages
+Generated _redirects
+Generated sitemap.xml
+Generated robots.txt
+Generated llms.txt
+
+DONE — 62 URLs total (34 kad + 10 pinjaman + 6 kategori kad + 4 kategori pinjaman + 4 trust + 1 utama)
+--- Deploying to Cloudflare Pages ---
+
+ ⛅️ wrangler 4.147.0
+────────────────────
+Uploading... (6/65)
+Uploading... (25/65)
+Uploading... (45/65)
+Uploading... (65/65)
+✨ Success! Uploaded 59 files (6 already uploaded) (1.49 sec)
+
+✨ Uploading _redirects
+🌎 Deploying...
+✨ Deployment complete! Take a peek over at https://2b0e308a.ringgit-iviztrading.pages.dev
+--- Purging Cache ---
+{"success":true,"errors":[],"messages":[],"result":{"id":"d9c296b599911752940ae9c9bc111179"}}=== [2026-10-05 23:57:01] Done ===
